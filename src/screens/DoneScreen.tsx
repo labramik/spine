@@ -1,8 +1,11 @@
+import { HomeButton } from '@/components/HomeButton';
+
 interface DoneScreenProps {
   exerciseName: string;
+  onHome: () => void;
 }
 
-export function DoneScreen({ exerciseName }: DoneScreenProps) {
+export function DoneScreen({ exerciseName, onHome }: DoneScreenProps) {
   return (
     <div
       className="fixed inset-0 flex flex-col items-center justify-center"
@@ -11,6 +14,7 @@ export function DoneScreen({ exerciseName }: DoneScreenProps) {
         padding: 'var(--ex-page-padding)',
       }}
     >
+      <HomeButton onHome={onHome} color="var(--ex-done-fg)" />
       <h1
         className="font-semibold tracking-tight"
         style={{

@@ -1,13 +1,15 @@
 import { Button } from '@/components/ui/button';
 import { CircularTimer } from '@/components/CircularTimer';
+import { HomeButton } from '@/components/HomeButton';
 
 interface RestScreenProps {
   secondsRemaining: number;
   totalSeconds: number;
   onSkip: () => void;
+  onHome: () => void;
 }
 
-export function RestScreen({ secondsRemaining, totalSeconds, onSkip }: RestScreenProps) {
+export function RestScreen({ secondsRemaining, totalSeconds, onSkip, onHome }: RestScreenProps) {
   return (
     <div
       className="fixed inset-0 flex flex-col items-center justify-center"
@@ -16,6 +18,7 @@ export function RestScreen({ secondsRemaining, totalSeconds, onSkip }: RestScree
         padding: 'var(--ex-page-padding)',
       }}
     >
+      <HomeButton onHome={onHome} color="var(--ex-rest-fg)" />
       <div className="flex flex-1 flex-col items-center justify-center gap-6">
         <h1
           className="font-semibold tracking-tight"

@@ -34,6 +34,7 @@ export function App() {
             totalSets={exercise.sets}
             onInstructions={() => dispatch({ type: 'OPEN_INSTRUCTIONS' })}
             onNext={() => dispatch({ type: 'ADVANCE_SET' })}
+            onHome={() => dispatch({ type: 'RESET' })}
           />
           <InstructionsOverlay
             exercise={exercise}
@@ -49,11 +50,12 @@ export function App() {
           secondsRemaining={state.restSecondsRemaining}
           totalSeconds={REST_SECONDS}
           onSkip={() => dispatch({ type: 'SKIP_REST' })}
+          onHome={() => dispatch({ type: 'RESET' })}
         />
       );
 
     case 'done':
-      return <DoneScreen exerciseName={exercise.name} />;
+      return <DoneScreen exerciseName={exercise.name} onHome={() => dispatch({ type: 'RESET' })} />;
   }
 }
 

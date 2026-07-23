@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { CircularTimer } from '@/components/CircularTimer';
+import { HomeButton } from '@/components/HomeButton';
 
 interface ActiveScreenProps {
   exerciseName: string;
@@ -9,6 +10,7 @@ interface ActiveScreenProps {
   totalSets: number;
   onInstructions: () => void;
   onNext: () => void;
+  onHome: () => void;
 }
 
 export function ActiveScreen({
@@ -19,6 +21,7 @@ export function ActiveScreen({
   totalSets,
   onInstructions,
   onNext,
+  onHome,
 }: ActiveScreenProps) {
   return (
     <div
@@ -28,6 +31,7 @@ export function ActiveScreen({
         padding: 'var(--ex-page-padding)',
       }}
     >
+      <HomeButton onHome={onHome} color="var(--ex-fg)" />
       <header className="flex-shrink-0 text-center">
         <h1
           className="font-semibold tracking-tight"
