@@ -11,6 +11,9 @@
     },
     "mobbin": {
       "enabled": true
+    },
+    "exa": {
+      "enabled": true
     }
   }
 }
