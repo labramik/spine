@@ -14,12 +14,12 @@ repetições. Entre exercícios há pausas cronometradas para descanso.
 
 ## Para quem
 
-Destina-se a pessoas que precisam de realizar exercícios de
-fortalecimento e mobilidade da coluna como parte de um plano de
-saúde ou reabilitação, sob recomendação de um profissional de saúde.
-A aplicação funciona como um guia visual que acompanha o utilizador
-durante a prática, evitando a necessidade de memorizar a sequência
-ou consultar folhas de papel.
+Destina-se principalmente a crianças que precisam de realizar
+exercícios de fortalecimento e mobilidade da coluna como parte de
+um plano de saúde ou reabilitação, sob recomendação de um
+profissional de saúde. A aplicação funciona como um guia visual que
+acompanha a criança durante a prática, evitando a necessidade de
+memorizar a sequência ou consultar folhas de papel.
 
 ## Funcionalidades
 
