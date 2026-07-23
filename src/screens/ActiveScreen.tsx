@@ -52,10 +52,10 @@ export function ActiveScreen({
           variant="active"
         />
         <span
-          className="font-medium"
+          className="font-semibold tracking-wide"
           style={{
-            fontSize: 'var(--ex-body-size)',
-            color: 'var(--ex-set-color)',
+            fontSize: 'var(--ex-set-size)',
+            color: 'var(--ex-fg)',
           }}
         >
           Série {currentSet} / {totalSets}

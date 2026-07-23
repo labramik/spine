@@ -23,7 +23,7 @@
   --ex-ring-progress: oklch(0.55 0.15 155);
   --ex-ring-rest-track: oklch(0.82 0.04 200);
   --ex-ring-rest-progress: oklch(0.55 0.12 200);
-  --ex-ring-number-size: clamp(4rem, 12vh, 8rem);
+  --ex-set-size: clamp(1.4rem, 3.5vh, 2.2rem);
 
   /* ─── Typography ─── */
   --ex-timer-size: clamp(8rem, 25vh, 16rem);
