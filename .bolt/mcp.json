@@ -7,7 +7,7 @@
       "enabled": true
     },
     "ref_tools": {
-      "enabled": false
+      "enabled": true
     },
     "mobbin": {
       "enabled": false
