@@ -1,8 +1,10 @@
 import { Button } from '@/components/ui/button';
+import { CircularTimer } from '@/components/CircularTimer';
 
 interface ActiveScreenProps {
   exerciseName: string;
   secondsRemaining: number;
+  totalSeconds: number;
   currentSet: number;
   totalSets: number;
   onInstructions: () => void;
@@ -12,6 +14,7 @@ interface ActiveScreenProps {
 export function ActiveScreen({
   exerciseName,
   secondsRemaining,
+  totalSeconds,
   currentSet,
   totalSets,
   onInstructions,
@@ -38,17 +41,12 @@ export function ActiveScreen({
         </h1>
       </header>
 
-      <main className="flex flex-1 flex-col items-center justify-center gap-4">
-        <span
-          className="tabular-nums font-bold leading-none"
-          style={{
-            fontSize: 'var(--ex-timer-size)',
-            fontWeight: 'var(--ex-timer-weight)',
-            color: 'var(--ex-timer-color)',
-          }}
-        >
-          {secondsRemaining}
-        </span>
+      <main className="flex flex-1 flex-col items-center justify-center gap-6">
+        <CircularTimer
+          secondsRemaining={secondsRemaining}
+          totalSeconds={totalSeconds}
+          variant="active"
+        />
         <span
           className="font-medium"
           style={{

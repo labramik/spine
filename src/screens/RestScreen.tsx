@@ -1,11 +1,13 @@
 import { Button } from '@/components/ui/button';
+import { CircularTimer } from '@/components/CircularTimer';
 
 interface RestScreenProps {
   secondsRemaining: number;
+  totalSeconds: number;
   onSkip: () => void;
 }
 
-export function RestScreen({ secondsRemaining, onSkip }: RestScreenProps) {
+export function RestScreen({ secondsRemaining, totalSeconds, onSkip }: RestScreenProps) {
   return (
     <div
       className="fixed inset-0 flex flex-col items-center justify-center"
@@ -24,15 +26,11 @@ export function RestScreen({ secondsRemaining, onSkip }: RestScreenProps) {
         >
           Descansa
         </h1>
-        <span
-          className="tabular-nums font-bold leading-none"
-          style={{
-            fontSize: 'var(--ex-timer-size)',
-            color: 'var(--ex-rest-fg)',
-          }}
-        >
-          {secondsRemaining}
-        </span>
+        <CircularTimer
+          secondsRemaining={secondsRemaining}
+          totalSeconds={totalSeconds}
+          variant="rest"
+        />
       </div>
 
       <footer className="flex-shrink-0 pb-8">
