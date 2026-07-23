@@ -1,0 +1,106 @@
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogFooter,
+  DialogClose,
+} from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
+import type { Exercise } from '@/data/programme';
+
+interface InstructionsOverlayProps {
+  exercise: Exercise;
+  open: boolean;
+  onClose: () => void;
+}
+
+export function InstructionsOverlay({
+  exercise,
+  open,
+  onClose,
+}: InstructionsOverlayProps) {
+  return (
+    <Dialog open={open} onOpenChange={(v) => { if (!v) onClose(); }}>
+      <DialogContent
+        showCloseButton={false}
+        className="max-w-2xl"
+        style={{
+          background: 'var(--ex-overlay-bg)',
+          padding: 'var(--ex-page-padding)',
+        }}
+        onPointerDownOutside={(e) => e.preventDefault()}
+        onInteractOutside={(e) => e.preventDefault()}
+      >
+        <DialogHeader>
+          <DialogTitle
+            className="text-center font-semibold"
+            style={{
+              fontSize: 'var(--ex-name-size)',
+              color: 'var(--ex-fg)',
+            }}
+          >
+            {exercise.name}
+          </DialogTitle>
+        </DialogHeader>
+
+        <div className="flex flex-col gap-4 py-4">
+          {exercise.lead && (
+            <p
+              className="italic"
+              style={{
+                fontSize: 'var(--ex-body-size)',
+                color: 'var(--ex-fg)',
+              }}
+            >
+              {exercise.lead}
+            </p>
+          )}
+
+          <ul className="flex flex-col gap-2 pl-4">
+            {exercise.instructions.map((line, i) => (
+              <li
+                key={i}
+                className="list-disc"
+                style={{
+                  fontSize: 'var(--ex-bullet-size)',
+                  color: 'var(--ex-fg)',
+                }}
+              >
+                {line}
+              </li>
+            ))}
+          </ul>
+
+          <p
+            className="font-bold"
+            style={{
+              fontSize: 'var(--ex-body-size)',
+              color: 'var(--ex-fg)',
+            }}
+          >
+            {exercise.summary}
+          </p>
+        </div>
+
+        <DialogFooter className="justify-center sm:justify-center">
+          <DialogClose asChild>
+            <Button
+              onClick={onClose}
+              className="cursor-pointer rounded-[var(--ex-btn-radius)] px-8 font-semibold"
+              style={{
+                height: 'var(--ex-btn-height)',
+                minWidth: 'var(--ex-btn-min-width)',
+                fontSize: 'var(--ex-btn-font-size)',
+                backgroundColor: 'var(--ex-accent)',
+                color: 'var(--ex-accent-fg)',
+              }}
+            >
+              Fechar
+            </Button>
+          </DialogClose>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+  );
+}

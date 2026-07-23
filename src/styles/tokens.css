@@ -1,0 +1,36 @@
+:root {
+  /* ─── Palette: warm, child-friendly, calm ─── */
+  --ex-bg: oklch(0.98 0.01 80);
+  --ex-bg-intro: oklch(0.95 0.03 85);
+  --ex-fg: oklch(0.22 0.02 50);
+  --ex-fg-muted: oklch(0.45 0.02 50);
+  --ex-accent: oklch(0.55 0.15 155);
+  --ex-accent-fg: oklch(0.99 0 0);
+  --ex-accent-hover: oklch(0.48 0.13 155);
+  --ex-rest-bg: oklch(0.94 0.04 200);
+  --ex-rest-fg: oklch(0.25 0.04 200);
+  --ex-done-bg: oklch(0.95 0.05 140);
+  --ex-done-fg: oklch(0.22 0.04 140);
+  --ex-overlay-bg: oklch(0.99 0.005 80);
+  --ex-timer-color: oklch(0.20 0.02 50);
+  --ex-set-color: oklch(0.40 0.02 50);
+  --ex-border: oklch(0.88 0.02 80);
+
+  /* ─── Typography ─── */
+  --ex-timer-size: clamp(8rem, 25vh, 16rem);
+  --ex-timer-weight: 700;
+  --ex-name-size: clamp(1.5rem, 3.5vh, 2.5rem);
+  --ex-name-weight: 600;
+  --ex-heading-size: clamp(2rem, 5vh, 3.5rem);
+  --ex-body-size: clamp(1.1rem, 2.2vh, 1.5rem);
+  --ex-bullet-size: clamp(1rem, 2vh, 1.35rem);
+
+  /* ─── Spacing ─── */
+  --ex-btn-height: 72px;
+  --ex-btn-min-width: 200px;
+  --ex-btn-gap: 1.5rem;
+  --ex-btn-radius: 1rem;
+  --ex-btn-font-size: clamp(1.1rem, 2.2vh, 1.4rem);
+  --ex-page-padding: 2rem;
+  --ex-section-gap: 2rem;
+}
