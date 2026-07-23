@@ -10,7 +10,7 @@
       "enabled": true
     },
     "mobbin": {
-      "enabled": false
+      "enabled": true
     }
   }
 }
