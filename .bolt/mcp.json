@@ -9,9 +9,6 @@
     "ref_tools": {
       "enabled": true
     },
-    "mobbin": {
-      "enabled": false
-    },
     "exa": {
       "enabled": true
     },
