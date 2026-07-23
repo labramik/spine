@@ -69,6 +69,8 @@ A short automatic rest timer appears between repeated timed holds or sets. Its d
 
 Moving to the next exercise is always manual through a Next button.
 
+A Home button is available on the active exercise, rest, and completion screens. Pressing it immediately resets the session and returns to the start of the programme. It is the only way to navigate backwards, and it always confirms before discarding an in-progress session.
+
 ## 4\. Music and Sound
 
 Each exercise may have its own music or sound.

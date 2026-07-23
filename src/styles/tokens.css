@@ -18,7 +18,7 @@
 
   /* ─── Circular timer ─── */
   --ex-ring-size: clamp(16rem, 45vh, 28rem);
-  --ex-ring-stroke: clamp(8px, 1.2vh, 14px);
+  --ex-ring-number-size: clamp(5rem, 14vh, 9rem);
   --ex-ring-track: oklch(0.90 0.02 80);
   --ex-ring-progress: oklch(0.55 0.15 155);
   --ex-ring-rest-track: oklch(0.82 0.04 200);

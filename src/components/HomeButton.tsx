@@ -3,7 +3,7 @@ import { Home } from 'lucide-react';
 
 interface HomeButtonProps {
   onHome: () => void;
-  /** Tailwind/text color utility or CSS color value */
+  /** CSS color value (e.g. "#f00", "oklch(0.5 0.1 200)") */
   color?: string;
   variant?: 'outline' | 'default';
 }
