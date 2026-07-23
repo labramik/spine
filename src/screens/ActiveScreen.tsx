@@ -1,21 +1,27 @@
 import { Button } from '@/components/ui/button';
+import { CircularTimer } from '@/components/CircularTimer';
+import { HomeButton } from '@/components/HomeButton';
 
 interface ActiveScreenProps {
   exerciseName: string;
   secondsRemaining: number;
+  totalSeconds: number;
   currentSet: number;
   totalSets: number;
   onInstructions: () => void;
   onNext: () => void;
+  onHome: () => void;
 }
 
 export function ActiveScreen({
   exerciseName,
   secondsRemaining,
+  totalSeconds,
   currentSet,
   totalSets,
   onInstructions,
   onNext,
+  onHome,
 }: ActiveScreenProps) {
   return (
     <div
@@ -25,6 +31,7 @@ export function ActiveScreen({
         padding: 'var(--ex-page-padding)',
       }}
     >
+      <HomeButton onHome={onHome} color="var(--ex-fg)" />
       <header className="flex-shrink-0 text-center">
         <h1
           className="font-semibold tracking-tight"
@@ -38,22 +45,17 @@ export function ActiveScreen({
         </h1>
       </header>
 
-      <main className="flex flex-1 flex-col items-center justify-center gap-4">
+      <main className="flex flex-1 flex-col items-center justify-center gap-6">
+        <CircularTimer
+          secondsRemaining={secondsRemaining}
+          totalSeconds={totalSeconds}
+          variant="active"
+        />
         <span
-          className="tabular-nums font-bold leading-none"
+          className="font-semibold tracking-wide"
           style={{
-            fontSize: 'var(--ex-timer-size)',
-            fontWeight: 'var(--ex-timer-weight)',
-            color: 'var(--ex-timer-color)',
-          }}
-        >
-          {secondsRemaining}
-        </span>
-        <span
-          className="font-medium"
-          style={{
-            fontSize: 'var(--ex-body-size)',
-            color: 'var(--ex-set-color)',
+            fontSize: 'var(--ex-set-size)',
+            color: 'var(--ex-fg)',
           }}
         >
           Série {currentSet} / {totalSets}

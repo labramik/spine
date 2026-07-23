@@ -18,6 +18,7 @@ type Action =
   | { type: 'REST_TICK' }
   | { type: 'SKIP_REST' }
   | { type: 'ADVANCE_SET' }
+  | { type: 'RESET' }
   | { type: 'OPEN_INSTRUCTIONS' }
   | { type: 'CLOSE_INSTRUCTIONS' };
 
@@ -104,6 +105,9 @@ function reducer(state: SessionState, action: Action): SessionState {
 
     case 'CLOSE_INSTRUCTIONS':
       return { ...state, instructionsOpen: false };
+
+    case 'RESET':
+      return getInitialState();
 
     default:
       return state;

@@ -9,11 +9,11 @@
     "ref_tools": {
       "enabled": true
     },
-    "mobbin": {
-      "enabled": true
-    },
     "exa": {
       "enabled": true
+    },
+    "magic_patterns": {
+      "enabled": false
     }
   }
 }

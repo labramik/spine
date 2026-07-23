@@ -1,4 +1,4 @@
-import { programme } from '@/data/programme';
+import { programme, REST_SECONDS } from '@/data/programme';
 import { useSessionReducer } from '@/hooks/useSessionReducer';
 import { useTimer } from '@/hooks/useTimer';
 import { IntroScreen } from '@/screens/IntroScreen';
@@ -29,10 +29,12 @@ export function App() {
           <ActiveScreen
             exerciseName={exercise.name}
             secondsRemaining={state.secondsRemaining}
+            totalSeconds={exercise.durationSec ?? 0}
             currentSet={state.currentSet}
             totalSets={exercise.sets}
             onInstructions={() => dispatch({ type: 'OPEN_INSTRUCTIONS' })}
             onNext={() => dispatch({ type: 'ADVANCE_SET' })}
+            onHome={() => dispatch({ type: 'RESET' })}
           />
           <InstructionsOverlay
             exercise={exercise}
@@ -46,12 +48,14 @@ export function App() {
       return (
         <RestScreen
           secondsRemaining={state.restSecondsRemaining}
+          totalSeconds={REST_SECONDS}
           onSkip={() => dispatch({ type: 'SKIP_REST' })}
+          onHome={() => dispatch({ type: 'RESET' })}
         />
       );
 
     case 'done':
-      return <DoneScreen exerciseName={exercise.name} />;
+      return <DoneScreen exerciseName={exercise.name} onHome={() => dispatch({ type: 'RESET' })} />;
   }
 }
 

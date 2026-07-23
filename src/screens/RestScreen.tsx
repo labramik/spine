@@ -1,11 +1,15 @@
 import { Button } from '@/components/ui/button';
+import { CircularTimer } from '@/components/CircularTimer';
+import { HomeButton } from '@/components/HomeButton';
 
 interface RestScreenProps {
   secondsRemaining: number;
+  totalSeconds: number;
   onSkip: () => void;
+  onHome: () => void;
 }
 
-export function RestScreen({ secondsRemaining, onSkip }: RestScreenProps) {
+export function RestScreen({ secondsRemaining, totalSeconds, onSkip, onHome }: RestScreenProps) {
   return (
     <div
       className="fixed inset-0 flex flex-col items-center justify-center"
@@ -14,6 +18,7 @@ export function RestScreen({ secondsRemaining, onSkip }: RestScreenProps) {
         padding: 'var(--ex-page-padding)',
       }}
     >
+      <HomeButton onHome={onHome} color="var(--ex-rest-fg)" />
       <div className="flex flex-1 flex-col items-center justify-center gap-6">
         <h1
           className="font-semibold tracking-tight"
@@ -24,15 +29,11 @@ export function RestScreen({ secondsRemaining, onSkip }: RestScreenProps) {
         >
           Descansa
         </h1>
-        <span
-          className="tabular-nums font-bold leading-none"
-          style={{
-            fontSize: 'var(--ex-timer-size)',
-            color: 'var(--ex-rest-fg)',
-          }}
-        >
-          {secondsRemaining}
-        </span>
+        <CircularTimer
+          secondsRemaining={secondsRemaining}
+          totalSeconds={totalSeconds}
+          variant="rest"
+        />
       </div>
 
       <footer className="flex-shrink-0 pb-8">

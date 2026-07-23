@@ -16,6 +16,15 @@
   --ex-set-color: oklch(0.40 0.02 50);
   --ex-border: oklch(0.88 0.02 80);
 
+  /* ─── Circular timer ─── */
+  --ex-ring-size: clamp(16rem, 45vh, 28rem);
+  --ex-ring-number-size: clamp(5rem, 14vh, 9rem);
+  --ex-ring-track: oklch(0.90 0.02 80);
+  --ex-ring-progress: oklch(0.55 0.15 155);
+  --ex-ring-rest-track: oklch(0.82 0.04 200);
+  --ex-ring-rest-progress: oklch(0.55 0.12 200);
+  --ex-set-size: clamp(1.4rem, 3.5vh, 2.2rem);
+
   /* ─── Typography ─── */
   --ex-timer-size: clamp(8rem, 25vh, 16rem);
   --ex-timer-weight: 700;
